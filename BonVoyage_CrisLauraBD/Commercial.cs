@@ -1,4 +1,4 @@
-﻿namespace BonVoyage_CrisLauraMetier
+﻿namespace BoVoyage_CrisLauraMetier
 {
     public class Commercial : Personne
     {

@@ -11,7 +11,6 @@ namespace BoVoyage_CrisLaura_Internet
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Client");
         }
     }

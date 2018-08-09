@@ -3,7 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BonVoyage_CrisLauraMetier
+namespace BoVoyage_CrisLauraMetier
 {
     public class Personne
     {

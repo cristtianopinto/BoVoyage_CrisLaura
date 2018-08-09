@@ -49,9 +49,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BonVoyage_CrisLauraBD\BonVoyage_CrisLauraMetier.csproj">
+    <ProjectReference Include="..\BonVoyage_CrisLauraBD\BoVoyage_CrisLauraMetier.csproj">
       <Project>{1DB768D9-E34D-42DC-87AB-F706FA873206}</Project>
-      <Name>BonVoyage_CrisLauraMetier</Name>
+      <Name>BoVoyage_CrisLauraMetier</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

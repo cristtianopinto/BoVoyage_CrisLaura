@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoVoyage_CrisLaura_Internet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoVoyage_CrisLaura_Commercial", "BoVoyage_CrisLaura_Commercial\BoVoyage_CrisLaura_Commercial.csproj", "{3F18BC3B-655F-4DFB-BD31-8A4AD599E0C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BonVoyage_CrisLauraMetier", "BonVoyage_CrisLauraBD\BonVoyage_CrisLauraMetier.csproj", "{1DB768D9-E34D-42DC-87AB-F706FA873206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoVoyage_CrisLauraMetier", "BonVoyage_CrisLauraBD\BoVoyage_CrisLauraMetier.csproj", "{1DB768D9-E34D-42DC-87AB-F706FA873206}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

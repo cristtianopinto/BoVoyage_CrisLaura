@@ -1,0 +1,11 @@
+Dossier:
+ClientId-1
+AccompagnantsId-2,1 //!Ici a un petit souci!
+VoyageId-1 
+tele-548754648759
+date-06/09/1985
+CB-45879
+Id-1
+Login-laura
+MotDePasse-te456
+****************
