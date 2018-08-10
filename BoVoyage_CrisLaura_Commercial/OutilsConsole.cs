@@ -9,6 +9,34 @@ namespace BoVoyage_CrisLaura_Commercial
     class OutilsConsole
     {
         /// <summary>
+        /// Methode responsqble pour masquer le mot de passe. Font - https://social.msdn.microsoft.com/Forums/vstudio/fr-FR/55e423d6-7917-4e7d-822d-ce1adcd547c6/comment-masquer-les-caractres-de-mot-de-passe-dans-la-console-lors-de-la-saisie-?forum=visualcsharpfr
+        /// </summary>
+        /// <returns></returns>
+        public static string MaskPassword()
+        {
+            Stack<char> stack = new Stack<char>();
+            ConsoleKeyInfo consoleKeyInfo;
+
+            // push until the enter key is pressed
+            while ((consoleKeyInfo = Console.ReadKey(true)).Key != ConsoleKey.Enter)
+            {
+                if (consoleKeyInfo.Key != ConsoleKey.Backspace)
+                {
+                    stack.Push(consoleKeyInfo.KeyChar);
+                    Console.Write("*");
+                }
+                else
+                {
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+                    if (stack.Count > 0) stack.Pop();
+                }
+            }
+
+            return stack.Reverse().Aggregate(string.Empty, (pass, kc) => pass += kc.ToString());
+        }
+        /// <summary>
         /// Methode qui retourne zero em cas de mauveise entrer(letre ou cqrqctere speciaux)
         /// </summary>
         /// <param name="Message"></param>

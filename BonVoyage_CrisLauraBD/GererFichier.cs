@@ -174,6 +174,7 @@ namespace BoVoyage_CrisLauraMetier
 
                 fileWriter.WriteLine($"Voyages:");
                 //
+                fileWriter.WriteLine("Identifient-" + v.Id);
                 fileWriter.WriteLine("Continent-" + v.Destination.Continent);
                 fileWriter.WriteLine("Pays-" + v.Destination.Pays);
                 fileWriter.WriteLine("Region-" + v.Destination.Region);

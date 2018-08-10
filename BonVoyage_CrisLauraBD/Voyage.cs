@@ -11,7 +11,7 @@ namespace BoVoyage_CrisLauraMetier
         public DateTime DateRetour { get; set; }
         public int NombrePlace { get; set; }
         public void ChangerPrix(double pourcentageReduction) {
-            this.Prix -= this.Prix* pourcentageReduction;
+            this.Prix = this.Prix - this.Prix * pourcentageReduction / 100 ;
         }
     }
 }

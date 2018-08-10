@@ -3,7 +3,7 @@ nom-VIVIEN
 prenom-Laura
 civilite-Mme 
 tele-548754648759
-date-06/09/1985
+date-06/09/1985 00:00:00
 CB-45879
 Id-1
 Login-laura
@@ -14,7 +14,7 @@ nom-PINTO
 prenom-Cristtiano
 civilite-M 
 tele-548754648754
-date-06/09/1986
+date-06/09/1986 00:00:00
 CB-45777
 Id-2
 Login-cris
@@ -25,7 +25,7 @@ nom-DOMINGUES
 prenom-Carol
 civilite-Mme 
 tele-548754648754
-date-06/09/1990
+date-06/09/1990 00:00:00
 CB-78999777
 Id-3
 Login-carol

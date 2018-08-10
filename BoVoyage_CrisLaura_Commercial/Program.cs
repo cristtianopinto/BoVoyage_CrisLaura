@@ -18,7 +18,6 @@ namespace BoVoyage_CrisLaura_Commercial
         public static List<Dossier> dossier = new List<Dossier>();
         static Commercial CommercialUser = new Commercial();
         //public static List<Dossier> dossier = new List<Dossier>();
-
         
         public static void GererDossier(Client client,List<Accompagnant> accompagnant,Voyage voyage,string etats)
         {
@@ -61,7 +60,6 @@ namespace BoVoyage_CrisLaura_Commercial
             }
             Console.ReadKey();
         }
-
         private static void PrintSingleClient(Client client)
         {
             Console.WriteLine($" Identifiant: {client.Id}\n" +
@@ -72,14 +70,10 @@ namespace BoVoyage_CrisLaura_Commercial
 
                               $" ═════════════════════\n");
         }
-
         static void ListerClient(List<Client> client)
         {
             Console.Clear();
-           
-                OutilsConsole.PrintMenu("Liste des clients", "Lister");
-            
-
+            OutilsConsole.PrintMenu("Liste Clients","Lister");            
             Console.WriteLine("\t[Vous avez {0} clients]", client.Count);
             for (int i = 0; i <= client.Count - 1; i++)
             {
@@ -87,7 +81,6 @@ namespace BoVoyage_CrisLaura_Commercial
             }
             Console.ReadKey();
         }
-
         static void GererClient()
         {
             bool sortir = false;
@@ -106,7 +99,14 @@ namespace BoVoyage_CrisLaura_Commercial
                 switch (op)
                 {
                     case 1:
-                        //gerer dossier
+                        if(dossier.Count == 0)
+                        {
+                            Console.WriteLine("Vous n'avez pas de dossier en cours de traitement!");
+                        }
+                        else
+                        {
+                            GererDossier();
+                        }
                         Console.ReadKey();
                         break;
                     case 2:
@@ -127,11 +127,33 @@ namespace BoVoyage_CrisLaura_Commercial
                 }
             }
         }
+
+        private static void GererDossier()
+        {
+            //Pour qu'un dossier s'affiche , un client doit faire une reservation sur l'application internet
+            throw new NotImplementedException();
+        }
+
+        static void ChangerPrixVoyage()
+        {
+            Console.Clear();
+            OutilsConsole.PrintMenu("Gerer Voyage", "Lister");
+            int id_voyage = OutilsConsole.SaisirEntierObligatoire("Tapez l'identifiant du voyage:\n","Champs requis!");
+            double tarif;
+            foreach(Voyage v in voyage_site)
+            {
+                if(v.Id == id_voyage)
+                {
+                    tarif = double.Parse(OutilsConsole.SaisirChaineObligatoire("Tapez la pourcentage de reduction du voyage:\n", "Champs requis!"));
+                    v.ChangerPrix(tarif);
+                }
+            }
+        }
         static void GererVoyage()
         {
             bool sortir = false;
             List<string> MenuOption = new List<string>();
-            MenuOption.Add("[1] Consulter la liste des voyages invendus par les AGENCE");
+            MenuOption.Add("[1] Consulter la liste des voyages invendus par les AGENCES");
             MenuOption.Add("[2] Consulter la Liste des voyages de BoVoyage");
             MenuOption.Add("[3] Changer prix des voyages");
             MenuOption.Add("[4] Sortir");
@@ -153,8 +175,7 @@ namespace BoVoyage_CrisLaura_Commercial
                         
                         break;
                     case 3:
-                        
-                        //Console.WriteLine($"Bye Bye! {CommercialUser.Nom},{CommercialUser.Prenom} ");
+                        ChangerPrixVoyage();                        
                         Console.ReadKey();
                         break;
                     case 4:
@@ -173,6 +194,7 @@ namespace BoVoyage_CrisLaura_Commercial
         }
         static void LancerApplication()
         {
+            
             Console.Title = "BoVoyage";            
             Console.SetWindowSize(Console.LargestWindowWidth/2, Console.LargestWindowHeight/2);
             GererFichier.RecupererFichier(clients);
@@ -183,6 +205,7 @@ namespace BoVoyage_CrisLaura_Commercial
         }
         static void Quitter()
         {
+            GererFichier.EcrireFichier(voyage_site,GererFichier.DirFileVoyageSite);
             GererFichier.EcrireFichier(clients);
             Environment.Exit(0);
         }
@@ -198,15 +221,15 @@ namespace BoVoyage_CrisLaura_Commercial
             while (!sortir)
             {
                 LoginUser = OutilsConsole.SaisirChaineObligatoire("\nLogin(valeur - yann)", "Champs Obligatoire!");
-                MotDePasseUser = OutilsConsole.SaisirChaineObligatoire("\nMot de Passe(valeur - abc)", "Champs Obligatoire!");
-                
-                foreach(Commercial c in commercial)
+                Console.WriteLine("\nMot de passe(valeur - abc)");
+                MotDePasseUser = OutilsConsole.MaskPassword();
+                foreach (Commercial c in commercial)
                 {
                     if (c.Login == LoginUser && c.MotDePasse == MotDePasseUser)
                     {
                         CommercialUser = c;
                         OutilsConsole.Visual("Lister");
-                        Console.WriteLine("Login Validé!");
+                        Console.WriteLine("\nLogin Validé!");
                         OutilsConsole.Visual("Normal");
                         Console.ReadKey();
                         sortir = true;
@@ -215,7 +238,7 @@ namespace BoVoyage_CrisLaura_Commercial
                 if (!sortir)
                 {
                     OutilsConsole.Visual("Danger");
-                    Console.WriteLine("Login ou Mot de passe Invalide!");
+                    Console.WriteLine("\nLogin ou Mot de passe Invalide!");
                     OutilsConsole.Visual("Normal");
                     Console.ReadKey();
                     Console.Clear();
@@ -234,8 +257,8 @@ namespace BoVoyage_CrisLaura_Commercial
             
             bool  sortir = false;            
             List<string> MenuOption = new List<string>();            
-            MenuOption.Add("[1] Gerer Voyages");
-            MenuOption.Add("[2] Gerer Client");
+            MenuOption.Add("[1] Gestion des Voyages");
+            MenuOption.Add("[2] Gestion des Clients");
             MenuOption.Add("[3] Sortir");
 
             while (!sortir)
@@ -255,6 +278,7 @@ namespace BoVoyage_CrisLaura_Commercial
                     case 3:
                         sortir = true;
                         Console.WriteLine($"Bye Bye! {CommercialUser.Nom},{CommercialUser.Prenom} ");
+                        Quitter();
                         Console.ReadKey();
                         break;
                     default:
