@@ -1,4 +1,4 @@
-﻿using BonVoyage_CrisLauraMetier;
+﻿using BoVoyage_CrisLauraMetier;
 using System;
 using System.Collections.Generic;
 using System.Linq;

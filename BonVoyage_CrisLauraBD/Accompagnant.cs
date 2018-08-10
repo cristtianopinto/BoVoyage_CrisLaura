@@ -2,6 +2,7 @@
 {
     public class Accompagnant : Personne
     {
-        public int Id { get; set; }
+        public int Id { get; set; }//Numéro séquenciel
+        public Adresse Adresse { get; set; }
     }
 }

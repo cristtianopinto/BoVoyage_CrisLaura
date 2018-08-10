@@ -10,7 +10,7 @@ namespace BoVoyage_CrisLauraMetier
         public string Civilite { get; set; }
         public string Nom { get; set; }
         public string Prenom { get; set; }
-        public Adresse Adresse { get; set; }
+        
         public string Telephone { get; set; }
         public DateTime DateDeNaissance { get; set; }
         public int Age()

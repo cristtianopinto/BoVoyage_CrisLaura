@@ -12,11 +12,12 @@ namespace BoVoyage_CrisLauraMetier
     /// </summary>
     public static class GererFichier
     {
-        const string DirFileClient = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Clients.txt";
-        const string DirFileAccompagnant = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Accompagnant.txt";
-        const string DirFileVoyage = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Voyage.txt";//ICI on va avoir les données de Destination
-        const string DirFileDossier = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Dossier.txt";
-        const string DirFileCommercial = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Commercial.txt";
+        private const string DirFileClient = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Clients.txt";
+        private const string DirFileAccompagnant = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Accompagnant.txt";
+        public const string DirFileVoyageAgence = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Voyage_agence.txt";//ICI on va avoir les données de Destination
+        public const string DirFileVoyageSite = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Voyage_site.txt";//ICI on va avoir les données de Destination
+        private const string DirFileDossier = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Dossier.txt";
+        private const string DirFileCommercial = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Commercial.txt";
 
         /// <summary>
         /// Methode pour gardes les donnez sur un file txt en relation CLient
@@ -82,7 +83,7 @@ namespace BoVoyage_CrisLauraMetier
                         case "Login":
                             c.Login = iniLine[1];
                             break;
-                        case "MotDePasse-":
+                        case "MotDePasse":
                             c.MotDePasse = iniLine[1];
                             break;
                     }
@@ -165,9 +166,9 @@ namespace BoVoyage_CrisLauraMetier
         /// <summary>
         /// Methode pour gardes les donnez sur un file txt en relation Voyage
         /// </summary>
-        public static void EcrireFichier(List<Voyage> Voyages)
+        public static void EcrireFichier(List<Voyage> Voyages,string dir)
         {
-            StreamWriter fileWriter = new StreamWriter(DirFileVoyage);
+            StreamWriter fileWriter = new StreamWriter(dir);
             foreach (Voyage v in Voyages)
             {
 
@@ -191,9 +192,9 @@ namespace BoVoyage_CrisLauraMetier
         /// <summary>
         /// Methode pour gardes les donnez sur un fichier *.txt en relation Voyage
         /// </summary>
-        public static void RecupererFichier(List<Voyage> Voyages)
+        public static void RecupererFichier(List<Voyage> Voyages, string dir)
         {
-            StreamReader fileReader = new StreamReader(DirFileVoyage);
+            StreamReader fileReader = new StreamReader(dir);
             string line;
             Voyage v = new Voyage();
             Destination d = new Destination();
@@ -204,6 +205,9 @@ namespace BoVoyage_CrisLauraMetier
                     string[] iniLine = line.Split('-');
                     switch (iniLine[0])
                     {
+                        case "Identifient":
+                            v.Id = int.Parse(iniLine[1]);
+                            break;
                         case "Continent":
                             d.Continent = iniLine[1];
                             break;
@@ -297,7 +301,7 @@ namespace BoVoyage_CrisLauraMetier
                         case "Login":
                             c.Login = iniLine[1];
                             break;
-                        case "MotDePasse-":
+                        case "MotDePasse":
                             c.MotDePasse = iniLine[1];
                             break;
                     }

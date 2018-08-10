@@ -1,0 +1,33 @@
+Voyage:
+Identifient-1
+Continent-Europe
+Pays-FRANCE
+Region-Occitanie 
+Description-La région s'étend sur une partie des deux massifs montagneux majeurs du Midi de la France : le versant nord des Pyrénées et le sud du Massif central.
+Prix-157,89
+DateAller-01/01/2018
+DateRetour-20/01/2018
+NombrePlace-10
+****************
+Voyage:
+Identifient-2
+Continent-Amerique du Sul
+Pays-BRESIL
+Region-Nordeste
+Description-Une region de belles plages.
+Prix-500,00
+DateAller-05/09/2018
+DateRetour-25/09/2018
+NombrePlace-20
+****************
+Voyage:
+Identifient-3
+Continent-Ameriaue du Sul
+Pays-BRESIL
+Region-Sul
+Description-Froid...
+Prix-185,00
+DateAller-05/10/2018
+DateRetour-25/10/2018
+NombrePlace-20
+****************

@@ -1,4 +1,5 @@
 Voyage:
+Identifient-1
 Continent-Europe
 Pays-FRANCE
 Region-Occitanie 
@@ -9,6 +10,7 @@ DateRetour-20/01/2018
 NombrePlace-10
 ****************
 Voyage:
+Identifient-2
 Continent-Amerique du Sul
 Pays-BRESIL
 Region-Nordeste
@@ -19,6 +21,7 @@ DateRetour-25/09/2018
 NombrePlace-20
 ****************
 Voyage:
+Identifient-3
 Continent-Ameriaue du Sul
 Pays-BRESIL
 Region-Sul
