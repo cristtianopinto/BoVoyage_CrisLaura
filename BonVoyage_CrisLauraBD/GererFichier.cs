@@ -12,12 +12,12 @@ namespace BoVoyage_CrisLauraMetier
     /// </summary>
     public static class GererFichier
     {
-        private const string DirFileClient = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Clients.txt";
-        private const string DirFileAccompagnant = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Accompagnant.txt";
-        public const string DirFileVoyageAgence = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Voyage_agence.txt";//ICI on va avoir les données de Destination
-        public const string DirFileVoyageSite = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Voyage_site.txt";//ICI on va avoir les données de Destination
-        private const string DirFileDossier = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Dossier.txt";
-        private const string DirFileCommercial = @"C:\\Users\Adminl\source\repos\BoVoyage_CrisLaura\BonVoyage_CrisLauraBD\FICHIER\Commercial.txt";
+        private const string DirFileClient = @"..\..\FICHIER\Clients.txt";
+        private const string DirFileAccompagnant = @"..\..\FICHIER\Accompagnant.txt";
+        public const string DirFileVoyageAgence = @"..\..\FICHIER\Voyage_agence.txt";//ICI on va avoir les données de Destination
+        public const string DirFileVoyageSite = @"..\..\FICHIER\Voyage_site.txt";//ICI on va avoir les données de Destination
+        private const string DirFileDossier = @"..\..\FICHIER\Dossier.txt";
+        private const string DirFileCommercial = @"..\..\FICHIER\Commercial.txt";
 
         /// <summary>
         /// Methode pour gardes les donnez sur un file txt en relation CLient

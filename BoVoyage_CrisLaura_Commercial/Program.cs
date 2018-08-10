@@ -50,7 +50,34 @@ namespace BoVoyage_CrisLaura_Commercial
                 PrintSingleVoyage(voyages[i]);
             }
             Console.ReadKey();
-        }        
+        }
+
+        private static void PrintSingleClient(Client client)
+        {
+            Console.WriteLine($" Identifiant: {client.Id}\n" +
+                              $" Nom: {client.Nom}\n" +
+                              $" Prenom: {client.Prenom}\n" +
+                              $" Adresse: {client.Adresse}\n" +
+                              $" CarteBancaire {client.CarteBancaire}\n" +
+
+                              $" ═════════════════════\n");
+        }
+
+        static void ListerClient(List<Client> client)
+        {
+            Console.Clear();
+           
+                OutilsConsole.PrintMenu("Liste des clients", "Lister");
+            
+
+            Console.WriteLine("\t[Vous avez {0} clients]", client.Count);
+            for (int i = 0; i <= client.Count - 1; i++)
+            {
+                PrintSingleClient(client[i]);
+            }
+            Console.ReadKey();
+        }
+
         static void GererClient()
         {
             bool sortir = false;
@@ -72,6 +99,7 @@ namespace BoVoyage_CrisLaura_Commercial
                         Console.ReadKey();
                         break;
                     case 2:
+                        ListerClient(clients);
                         Console.ReadKey();
                         break;
                     case 3:
