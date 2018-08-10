@@ -15,9 +15,20 @@ namespace BoVoyage_CrisLaura_Commercial
         public static List<Accompagnant> accompagnant = new List<Accompagnant>();
         public static List<Commercial> commercial = new List<Commercial>();
         public static List<Client> clients = new List<Client>();
+        public static List<Dossier> dossier = new List<Dossier>();
         static Commercial CommercialUser = new Commercial();
         //public static List<Dossier> dossier = new List<Dossier>();
 
+        
+        public static void GererDossier(Client client,List<Accompagnant> accompagnant,Voyage voyage,string etats)
+        {
+            Dossier dossier = new Dossier();
+            dossier.Client = client;
+            dossier.Accompagnants = accompagnant;
+            dossier.Voyage = voyage;
+            dossier.Etats = etats;
+
+        }
         private static void PrintSingleVoyage(Voyage voyage)
         {
             Console.WriteLine($" Identifient: {voyage.Id}\n" +
@@ -33,8 +44,7 @@ namespace BoVoyage_CrisLaura_Commercial
         }
         static void ListerVoyage(List<Voyage> voyages, int option)
         {
-            Console.Clear();
-            int consoleWidth = Console.WindowWidth;
+            Console.Clear();            
             if(option== 1)
             {
                 OutilsConsole.PrintMenu("Liste voyage - AGENCE", "Lister");
@@ -50,7 +60,9 @@ namespace BoVoyage_CrisLaura_Commercial
                 PrintSingleVoyage(voyages[i]);
             }
             Console.ReadKey();
-        }        
+        }
+
+        
         static void GererClient()
         {
             bool sortir = false;
@@ -69,6 +81,7 @@ namespace BoVoyage_CrisLaura_Commercial
                 switch (op)
                 {
                     case 1:
+                        //gerer dossier
                         Console.ReadKey();
                         break;
                     case 2:

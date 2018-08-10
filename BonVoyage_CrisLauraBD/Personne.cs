@@ -15,8 +15,8 @@ namespace BoVoyage_CrisLauraMetier
         public DateTime DateDeNaissance { get; set; }
         public int Age()
         {
-            //A FAIRE!
-            return 0;
+            TimeSpan jourTotal = DateTime.Now.Subtract(DateDeNaissance);
+            return jourTotal.Days / 365;
             
         }
     }
